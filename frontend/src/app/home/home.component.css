@@ -1,0 +1,12 @@
+.body , .header1{
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f7fa; 
+}
+
+.card {
+    background-color: #ffffff !important; 
+    border: 1px solid #e0e6ed;            
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}

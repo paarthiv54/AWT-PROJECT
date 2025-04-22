@@ -1,0 +1,14 @@
+<div class="card-container" *ngIf="login">
+  <div class="card w-100 h-auto">
+    <div class="card-body">
+      <h5 class="card-title">Title:<br>{{ data.title }}</h5>
+      <p class="card-text">Description:<br><i>{{ data.description }}</i></p>
+      <p class="card-text">Category:<br>{{ data.category }}</p>
+      <p class="card-text">Date:<br>{{ data.date | date:'short' }}</p>
+      <div class="btns" *ngIf="!isDisable()">
+        <button [routerLink]="['/edit', data._id]" class="btn btn-danger">Edit</button>
+        <a (click)="delete(data._id)" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>

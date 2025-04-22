@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Notice</a>
+
+  <div class="vr text-light mx-3"></div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" 
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active pop-on-hover" href="#">Home</a>
+      <a class="nav-item nav-link pop-on-hover" [routerLink]="['/add']" *ngIf="isAdmin">Add</a>
+    </div>
+  </div>
+
+  <div class="navbar-nav ms-auto" *ngIf="isLoggedIn == false">
+    <a class="nav-item nav-link pop-on-hover login-hover" [routerLink]="['/login']">Login</a>
+    <a class="nav-item nav-link pop-on-hover signup-hover" [routerLink]="['/signup']">Signup</a>
+  </div>
+
+  <div class="navbar-nav ms-auto" *ngIf="login()">
+    <button class="nav-item nav-link" (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
